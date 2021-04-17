@@ -21,17 +21,6 @@ namespace IEnumerableBench
         }
 
         [Benchmark]
-        public void Sum()
-        {
-            var sum = 0;
-
-            foreach (var e in _list)
-            {
-                sum += e;
-            }
-        }
-        
-        [Benchmark]
         public void SumByIndexes()
         {
             var sum = 0;
@@ -39,6 +28,17 @@ namespace IEnumerableBench
             for (var id = 0; id < _list.Count; id++)
             {
                 sum += _list[id];
+            }
+        }
+
+        [Benchmark]
+        public void Sum()
+        {
+            var sum = 0;
+
+            foreach (var e in _list)
+            {
+                sum += e;
             }
         }
 
@@ -62,7 +62,7 @@ namespace IEnumerableBench
             {
                 list.Add(rnd.Next(100));
             }
-            
+
             return list;
         }
 
