@@ -1,0 +1,360 @@
+.class private auto ansi '<Module>'
+{
+} // end of class <Module>
+
+.class public auto ansi beforefieldinit Program
+    extends [System.Private.CoreLib]System.Object
+{
+    // Methods
+    .method public hidebysig 
+        instance void Main () cil managed 
+    {
+        // Method begins at RVA 0x2050
+        // Code size 2 (0x2)
+        .maxstack 8
+
+        IL_0000: nop
+        IL_0001: ret
+    } // end of method Program::Main
+
+    .method public hidebysig specialname rtspecialname 
+        instance void .ctor () cil managed 
+    {
+        // Method begins at RVA 0x2053
+        // Code size 8 (0x8)
+        .maxstack 8
+
+        IL_0000: ldarg.0
+        IL_0001: call instance void [System.Private.CoreLib]System.Object::.ctor()
+        IL_0006: nop
+        IL_0007: ret
+    } // end of method Program::.ctor
+
+} // end of class Program
+
+.class public auto ansi abstract sealed beforefieldinit Generator
+    extends [System.Private.CoreLib]System.Object
+{
+    // Nested Types
+    .class nested private auto ansi sealed beforefieldinit '<GenerateNumbers>d__0'
+        extends [System.Private.CoreLib]System.Object
+        implements class [System.Private.CoreLib]System.Collections.Generic.IEnumerable`1<int32>,
+                   [System.Private.CoreLib]System.Collections.IEnumerable,
+                   class [System.Private.CoreLib]System.Collections.Generic.IEnumerator`1<int32>,
+                   [System.Private.CoreLib]System.IDisposable,
+                   [System.Private.CoreLib]System.Collections.IEnumerator
+    {
+        .custom instance void [System.Private.CoreLib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = (
+            01 00 00 00
+        )
+        // Fields
+        .field private int32 '<>1__state'
+        .field private int32 '<>2__current'
+        .field private int32 '<>l__initialThreadId'
+        .field private int32 '<secretLocalNumber>5__1'
+        .field private int32 '<tmpId>5__2'
+
+        // Methods
+        .method public hidebysig specialname rtspecialname 
+            instance void .ctor (
+                int32 '<>1__state'
+            ) cil managed 
+        {
+            .custom instance void [System.Private.CoreLib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+                01 00 00 00
+            )
+            // Method begins at RVA 0x206a
+            // Code size 26 (0x1a)
+            .maxstack 8
+
+            IL_0000: ldarg.0
+            IL_0001: call instance void [System.Private.CoreLib]System.Object::.ctor()
+            IL_0006: nop
+            IL_0007: ldarg.0
+            IL_0008: ldarg.1
+            IL_0009: stfld int32 Generator/'<GenerateNumbers>d__0'::'<>1__state'
+            IL_000e: ldarg.0
+            IL_000f: call int32 [System.Private.CoreLib]System.Environment::get_CurrentManagedThreadId()
+            IL_0014: stfld int32 Generator/'<GenerateNumbers>d__0'::'<>l__initialThreadId'
+            IL_0019: ret
+        } // end of method '<GenerateNumbers>d__0'::.ctor
+
+        .method private final hidebysig newslot virtual 
+            instance void System.IDisposable.Dispose () cil managed 
+        {
+            .custom instance void [System.Private.CoreLib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+                01 00 00 00
+            )
+            .override method instance void [System.Private.CoreLib]System.IDisposable::Dispose()
+            // Method begins at RVA 0x2085
+            // Code size 1 (0x1)
+            .maxstack 8
+
+            IL_0000: ret
+        } // end of method '<GenerateNumbers>d__0'::System.IDisposable.Dispose
+
+        .method private final hidebysig newslot virtual 
+            instance bool MoveNext () cil managed 
+        {
+            .override method instance bool [System.Private.CoreLib]System.Collections.IEnumerator::MoveNext()
+            // Method begins at RVA 0x2088
+            // Code size 191 (0xbf)
+            .maxstack 3
+            .locals init (
+                [0] int32,
+                [1] int32,
+                [2] bool
+            )
+
+            // sequence point: hidden
+            IL_0000: ldarg.0
+            IL_0001: ldfld int32 Generator/'<GenerateNumbers>d__0'::'<>1__state'
+            IL_0006: stloc.0
+            IL_0007: ldloc.0
+            IL_0008: switch (IL_001f, IL_0021, IL_0023, IL_0025)
+
+            IL_001d: br.s IL_002a
+
+            IL_001f: br.s IL_002c
+
+            IL_0021: br.s IL_0054
+
+            IL_0023: br.s IL_007c
+
+            IL_0025: br IL_00b6
+
+            IL_002a: ldc.i4.0
+            IL_002b: ret
+
+            IL_002c: ldarg.0
+            IL_002d: ldc.i4.m1
+            IL_002e: stfld int32 Generator/'<GenerateNumbers>d__0'::'<>1__state'
+            IL_0033: nop
+            IL_0034: ldarg.0
+            IL_0035: ldc.i4.s 42
+            IL_0037: stfld int32 Generator/'<GenerateNumbers>d__0'::'<secretLocalNumber>5__1'
+            IL_003c: ldarg.0
+            IL_003d: ldarg.0
+            IL_003e: ldfld int32 Generator/'<GenerateNumbers>d__0'::'<secretLocalNumber>5__1'
+            IL_0043: ldc.i4.s 13
+            IL_0045: add
+            IL_0046: stfld int32 Generator/'<GenerateNumbers>d__0'::'<>2__current'
+            IL_004b: ldarg.0
+            IL_004c: ldc.i4.1
+            IL_004d: stfld int32 Generator/'<GenerateNumbers>d__0'::'<>1__state'
+            IL_0052: ldc.i4.1
+            IL_0053: ret
+
+            // sequence point: hidden
+            IL_0054: ldarg.0
+            IL_0055: ldc.i4.m1
+            IL_0056: stfld int32 Generator/'<GenerateNumbers>d__0'::'<>1__state'
+            IL_005b: ldarg.0
+            IL_005c: ldc.i4.0
+            IL_005d: stfld int32 Generator/'<GenerateNumbers>d__0'::'<tmpId>5__2'
+            // sequence point: hidden
+            IL_0062: br.s IL_0093
+
+            IL_0064: ldarg.0
+            IL_0065: ldarg.0
+            IL_0066: ldfld int32 Generator/'<GenerateNumbers>d__0'::'<tmpId>5__2'
+            IL_006b: ldc.i4.s 10
+            IL_006d: add
+            IL_006e: stfld int32 Generator/'<GenerateNumbers>d__0'::'<>2__current'
+            IL_0073: ldarg.0
+            IL_0074: ldc.i4.2
+            IL_0075: stfld int32 Generator/'<GenerateNumbers>d__0'::'<>1__state'
+            IL_007a: ldc.i4.1
+            IL_007b: ret
+
+            // sequence point: hidden
+            IL_007c: ldarg.0
+            IL_007d: ldc.i4.m1
+            IL_007e: stfld int32 Generator/'<GenerateNumbers>d__0'::'<>1__state'
+            IL_0083: ldarg.0
+            IL_0084: ldfld int32 Generator/'<GenerateNumbers>d__0'::'<tmpId>5__2'
+            IL_0089: stloc.1
+            IL_008a: ldarg.0
+            IL_008b: ldloc.1
+            IL_008c: ldc.i4.1
+            IL_008d: add
+            IL_008e: stfld int32 Generator/'<GenerateNumbers>d__0'::'<tmpId>5__2'
+
+            IL_0093: ldarg.0
+            IL_0094: ldfld int32 Generator/'<GenerateNumbers>d__0'::'<tmpId>5__2'
+            IL_0099: ldc.i4.3
+            IL_009a: clt
+            IL_009c: stloc.2
+            // sequence point: hidden
+            IL_009d: ldloc.2
+            IL_009e: brtrue.s IL_0064
+
+            IL_00a0: ldarg.0
+            IL_00a1: ldc.i4.s -99
+            IL_00a3: call int32 Generator::SomeStaticMethod(int32)
+            IL_00a8: stfld int32 Generator/'<GenerateNumbers>d__0'::'<>2__current'
+            IL_00ad: ldarg.0
+            IL_00ae: ldc.i4.3
+            IL_00af: stfld int32 Generator/'<GenerateNumbers>d__0'::'<>1__state'
+            IL_00b4: ldc.i4.1
+            IL_00b5: ret
+
+            // sequence point: hidden
+            IL_00b6: ldarg.0
+            IL_00b7: ldc.i4.m1
+            IL_00b8: stfld int32 Generator/'<GenerateNumbers>d__0'::'<>1__state'
+            IL_00bd: ldc.i4.0
+            IL_00be: ret
+        } // end of method '<GenerateNumbers>d__0'::MoveNext
+
+        .method private final hidebysig specialname newslot virtual 
+            instance int32 'System.Collections.Generic.IEnumerator<System.Int32>.get_Current' () cil managed 
+        {
+            .custom instance void [System.Private.CoreLib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+                01 00 00 00
+            )
+            .override method instance !0 class [System.Private.CoreLib]System.Collections.Generic.IEnumerator`1<int32>::get_Current()
+            // Method begins at RVA 0x2153
+            // Code size 7 (0x7)
+            .maxstack 8
+
+            IL_0000: ldarg.0
+            IL_0001: ldfld int32 Generator/'<GenerateNumbers>d__0'::'<>2__current'
+            IL_0006: ret
+        } // end of method '<GenerateNumbers>d__0'::'System.Collections.Generic.IEnumerator<System.Int32>.get_Current'
+
+        .method private final hidebysig newslot virtual 
+            instance void System.Collections.IEnumerator.Reset () cil managed 
+        {
+            .custom instance void [System.Private.CoreLib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+                01 00 00 00
+            )
+            .override method instance void [System.Private.CoreLib]System.Collections.IEnumerator::Reset()
+            // Method begins at RVA 0x215b
+            // Code size 6 (0x6)
+            .maxstack 8
+
+            IL_0000: newobj instance void [System.Private.CoreLib]System.NotSupportedException::.ctor()
+            IL_0005: throw
+        } // end of method '<GenerateNumbers>d__0'::System.Collections.IEnumerator.Reset
+
+        .method private final hidebysig specialname newslot virtual 
+            instance object System.Collections.IEnumerator.get_Current () cil managed 
+        {
+            .custom instance void [System.Private.CoreLib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+                01 00 00 00
+            )
+            .override method instance object [System.Private.CoreLib]System.Collections.IEnumerator::get_Current()
+            // Method begins at RVA 0x2162
+            // Code size 12 (0xc)
+            .maxstack 8
+
+            IL_0000: ldarg.0
+            IL_0001: ldfld int32 Generator/'<GenerateNumbers>d__0'::'<>2__current'
+            IL_0006: box [System.Private.CoreLib]System.Int32
+            IL_000b: ret
+        } // end of method '<GenerateNumbers>d__0'::System.Collections.IEnumerator.get_Current
+
+        .method private final hidebysig newslot virtual 
+            instance class [System.Private.CoreLib]System.Collections.Generic.IEnumerator`1<int32> 'System.Collections.Generic.IEnumerable<System.Int32>.GetEnumerator' () cil managed 
+        {
+            .custom instance void [System.Private.CoreLib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+                01 00 00 00
+            )
+            .override method instance class [System.Private.CoreLib]System.Collections.Generic.IEnumerator`1<!0> class [System.Private.CoreLib]System.Collections.Generic.IEnumerable`1<int32>::GetEnumerator()
+            // Method begins at RVA 0x2170
+            // Code size 43 (0x2b)
+            .maxstack 2
+            .locals init (
+                [0] class Generator/'<GenerateNumbers>d__0'
+            )
+
+            IL_0000: ldarg.0
+            IL_0001: ldfld int32 Generator/'<GenerateNumbers>d__0'::'<>1__state'
+            IL_0006: ldc.i4.s -2
+            IL_0008: bne.un.s IL_0022
+
+            IL_000a: ldarg.0
+            IL_000b: ldfld int32 Generator/'<GenerateNumbers>d__0'::'<>l__initialThreadId'
+            IL_0010: call int32 [System.Private.CoreLib]System.Environment::get_CurrentManagedThreadId()
+            IL_0015: bne.un.s IL_0022
+
+            IL_0017: ldarg.0
+            IL_0018: ldc.i4.0
+            IL_0019: stfld int32 Generator/'<GenerateNumbers>d__0'::'<>1__state'
+            IL_001e: ldarg.0
+            IL_001f: stloc.0
+            IL_0020: br.s IL_0029
+
+            IL_0022: ldc.i4.0
+            IL_0023: newobj instance void Generator/'<GenerateNumbers>d__0'::.ctor(int32)
+            IL_0028: stloc.0
+
+            IL_0029: ldloc.0
+            IL_002a: ret
+        } // end of method '<GenerateNumbers>d__0'::'System.Collections.Generic.IEnumerable<System.Int32>.GetEnumerator'
+
+        .method private final hidebysig newslot virtual 
+            instance class [System.Private.CoreLib]System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator () cil managed 
+        {
+            .custom instance void [System.Private.CoreLib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+                01 00 00 00
+            )
+            .override method instance class [System.Private.CoreLib]System.Collections.IEnumerator [System.Private.CoreLib]System.Collections.IEnumerable::GetEnumerator()
+            // Method begins at RVA 0x21a7
+            // Code size 7 (0x7)
+            .maxstack 8
+
+            IL_0000: ldarg.0
+            IL_0001: call instance class [System.Private.CoreLib]System.Collections.Generic.IEnumerator`1<int32> Generator/'<GenerateNumbers>d__0'::'System.Collections.Generic.IEnumerable<System.Int32>.GetEnumerator'()
+            IL_0006: ret
+        } // end of method '<GenerateNumbers>d__0'::System.Collections.IEnumerable.GetEnumerator
+
+        // Properties
+        .property instance int32 'System.Collections.Generic.IEnumerator<System.Int32>.Current'()
+        {
+            .get instance int32 Generator/'<GenerateNumbers>d__0'::'System.Collections.Generic.IEnumerator<System.Int32>.get_Current'()
+        }
+        .property instance object System.Collections.IEnumerator.Current()
+        {
+            .get instance object Generator/'<GenerateNumbers>d__0'::System.Collections.IEnumerator.get_Current()
+        }
+
+    } // end of class <GenerateNumbers>d__0
+
+
+    // Methods
+    .method public hidebysig static 
+        class [System.Private.CoreLib]System.Collections.Generic.IEnumerable`1<int32> GenerateNumbers () cil managed 
+    {
+        .custom instance void [System.Private.CoreLib]System.Runtime.CompilerServices.IteratorStateMachineAttribute::.ctor(class [System.Private.CoreLib]System.Type) = (
+            01 00 1f 47 65 6e 65 72 61 74 6f 72 2b 3c 47 65
+            6e 65 72 61 74 65 4e 75 6d 62 65 72 73 3e 64 5f
+            5f 30 00 00
+        )
+        // Method begins at RVA 0x205c
+        // Code size 8 (0x8)
+        .maxstack 8
+
+        IL_0000: ldc.i4.s -2
+        IL_0002: newobj instance void Generator/'<GenerateNumbers>d__0'::.ctor(int32)
+        IL_0007: ret
+    } // end of method Generator::GenerateNumbers
+
+    .method public hidebysig static 
+        int32 SomeStaticMethod (
+            int32 x
+        ) cil managed 
+    {
+        // Method begins at RVA 0x2065
+        // Code size 4 (0x4)
+        .maxstack 8
+
+        IL_0000: ldarg.0
+        IL_0001: ldc.i4.1
+        IL_0002: sub
+        IL_0003: ret
+    } // end of method Generator::SomeStaticMethod
+
+} // end of class Generator
+
