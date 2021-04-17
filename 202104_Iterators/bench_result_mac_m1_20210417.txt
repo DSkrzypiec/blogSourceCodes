@@ -1,0 +1,32 @@
+// * Summary *
+
+BenchmarkDotNet=v0.12.1, OS=macOS 11.2.3 (20D91) [Darwin 20.3.0]
+Apple M1 2.40GHz, 1 CPU, 8 logical and 8 physical cores
+.NET Core SDK=5.0.202
+  [Host]     : .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
+  DefaultJob : .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
+
+
+|        Method |     Size |         Mean |     Error |    StdDev |  Gen 0 | Gen 1 | Gen 2 | Allocated |
+|-------------- |--------- |-------------:|----------:|----------:|-------:|------:|------:|----------:|
+|  SumByIndexes |     1000 |     2.507 ns | 0.0034 ns | 0.0029 ns |      - |     - |     - |         - |
+|           Sum |     1000 |    30.659 ns | 0.0253 ns | 0.0211 ns | 0.0191 |     - |     - |      40 B |
+| SumEnumerable |     1000 | 1,559.437 ns | 1.0056 ns | 0.8915 ns | 0.1564 |     - |     - |     328 B |
+|  SumByIndexes |  1000000 |     4.965 ns | 0.0062 ns | 0.0055 ns |      - |     - |     - |         - |
+|           Sum |  1000000 |    25.535 ns | 0.0528 ns | 0.0494 ns | 0.0191 |     - |     - |      40 B |
+| SumEnumerable |  1000000 | 1,550.568 ns | 0.9886 ns | 0.8764 ns | 0.1564 |     - |     - |     328 B |
+|  SumByIndexes | 10000000 |     3.064 ns | 0.0067 ns | 0.0052 ns |      - |     - |     - |         - |
+|           Sum | 10000000 |    23.035 ns | 0.0195 ns | 0.0172 ns | 0.0191 |     - |     - |      40 B |
+| SumEnumerable | 10000000 | 1,557.213 ns | 1.8185 ns | 1.6121 ns | 0.1564 |     - |     - |     328 B |
+
+// * Hints *
+Outliers
+  Benchmarks.SumByIndexes: Default  -> 2 outliers were removed (4.74 ns, 4.74 ns)
+  Benchmarks.Sum: Default           -> 2 outliers were removed (32.43 ns, 32.46 ns)
+  Benchmarks.SumEnumerable: Default -> 1 outlier  was  removed (1.57 us)
+  Benchmarks.SumByIndexes: Default  -> 1 outlier  was  removed (6.64 ns)
+  Benchmarks.SumEnumerable: Default -> 1 outlier  was  removed (1.56 us)
+  Benchmarks.SumByIndexes: Default  -> 3 outliers were removed (4.76 ns..4.79 ns)
+  Benchmarks.Sum: Default           -> 1 outlier  was  removed (24.85 ns)
+  Benchmarks.SumEnumerable: Default -> 1 outlier  was  removed (1.58 us)
+
